@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+    #ingredients{
+  width:600px;
+  height:320px;
+  border:solid 1px #ff6a00;
+}
+#pot{
+  width:600px;
+  height:320px;
+  border:solid 1px #ff6a00;
+}
+  </style>
+
+  <script type="text/javascript">
+    function onDragStart(e) {
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text', e.target.id);
+    }
+
+    function onDragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+    }
+
+    function onDrop(e) {
+      if (e.stopPropagation) e.stopPropagation();
+      var eid = e.dataTransfer.getData('text');
+      var elem = document.getElementById(eid);
+      e.target.appendChild(elem);
+
+      var pot=document.getElementById("pot");
+      var list=new Set();      
+
+      for(var i=0;i<pot.childElementCount;i++){
+        list.add(pot.children[i].id)
+      }
+      console.log(list)
+
+      if(list.size==2&&list.has("carrot")&&list.has("apple")){
+        setTimeout(() => {alert("カレーができました！")}, 200);
+      }
+    }
+
+    function test(i){
+      var apple=document.getElementById("apple");
+      var i=Number(apple.src.match(/(?<=apple)\d+/))
+      i++;
+      apple.src="apple"+i%3+".png";
+    }
+  </script>
+
+</head>
+<body>
+
+  <div id="ingredients" ondrop="onDrop(event);" ondragover="onDragOver(event);">
+    具材
+  <img id="apple" ondragstart="onDragStart(event);" src="apple0.png" onclick="test(0)" height="130" width="130"/>
+  <img id="carrot" ondragstart="onDragStart(event);" src="carrot.png" height="130" width="130"/>
+  <img id="cucamber" ondragstart="onDragStart(event);" src="cucumber.png" height="130" width="130"/>
+  <img id="grape" ondragstart="onDragStart(event);" src="grape.png" height="130" width="130"/>
+  </div>
+
+  <div id="pot" ondrop="onDrop(event);" ondragover="onDragOver(event);">
+    鍋
+  </div>
+</body>
+</html>
