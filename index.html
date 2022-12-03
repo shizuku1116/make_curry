@@ -5,68 +5,59 @@
   <title></title>
   <style>
     #ingredients{
-  width:600px;
-  height:320px;
+  width:700px;
+  height:300px;
   border:solid 1px #ff6a00;
 }
-#pot{
-  width:600px;
-  height:320px;
-  border:solid 1px #ff6a00;
+#recipe{
+  width:700px;
+  height:300px;
+  border:solid 1px #ff0000;
 }
   </style>
 
   <script type="text/javascript">
-    function onDragStart(e) {
-      e.dataTransfer.effectAllowed = 'move';
-      e.dataTransfer.setData('text', e.target.id);
+    const curry=["apple","potato","onion","meat"]
+    const party=["cake","pizza","juice"];
+    const breakfast=["bread","milk"];
+
+    const menu=[curry,party,breakfast]
+    const jmenu=["カレーをつくろう！","パーティーをはじめよう！","あさごはんをたべよう！"]
+    function uketori(){
+		var url = new URL(window.location.href);
+		var id = url.searchParams.get("id").match(/\d/g);
+        var text="";
+        var text2=""
+
+        for(var n=0;n<menu[id[0]].length;n++){
+            text+="<img id=\""+menu[id[0]][n]+"\" src=\"./img/"+menu[id[0]][n]+id[n+1]+".jpg\" height=\"80%\">\n";
+            text2+="<img id=\""+menu[id[0]][n]+"\" src=\"./img/"+menu[id[0]][n]+"0.jpg\" onclick=\"imgChange(this)\" height=\"80%\">\n";
+        }
+
+        var recipe=document.getElementById("recipe");
+        var ingredients=document.getElementById("ingredients");
+        recipe.insertAdjacentHTML("beforebegin",jmenu[id[0]]);
+        recipe.insertAdjacentHTML("beforeend",text);
+        ingredients.insertAdjacentHTML("afterbegin",text2);
     }
-
-    function onDragOver(e) {
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-    }
-
-    function onDrop(e) {
-      if (e.stopPropagation) e.stopPropagation();
-      var eid = e.dataTransfer.getData('text');
-      var elem = document.getElementById(eid);
-      e.target.appendChild(elem);
-
-      var pot=document.getElementById("pot");
-      var list=new Set();      
-
-      for(var i=0;i<pot.childElementCount;i++){
-        list.add(pot.children[i].id)
-      }
-      console.log(list)
-
-      if(list.size==2&&list.has("carrot")&&list.has("apple")){
-        setTimeout(() => {alert("カレーができました！")}, 200);
-      }
-    }
-
-    function test(i){
-      var apple=document.getElementById("apple");
-      var i=Number(apple.src.match(/(?<=apple)\d+/))
+    
+    function imgChange(tag){
+      var material=tag.id;
+      var i=Number(tag.src.match(/\d+(?=\.jpg)/));
       i++;
-      apple.src="apple"+i%3+".png";
+      tag.src="./img/"+material+i%4+".jpg";
     }
   </script>
 
 </head>
-<body>
+<body onload="uketori()">
 
-  <div id="ingredients" ondrop="onDrop(event);" ondragover="onDragOver(event);">
-    具材
-  <img id="apple" ondragstart="onDragStart(event);" src="apple0.png" onclick="test(0)" height="130" width="130"/>
-  <img id="carrot" ondragstart="onDragStart(event);" src="carrot.png" height="130" width="130"/>
-  <img id="cucamber" ondragstart="onDragStart(event);" src="cucumber.png" height="130" width="130"/>
-  <img id="grape" ondragstart="onDragStart(event);" src="grape.png" height="130" width="130"/>
-  </div>
+    <div id="recipe">
+    </div><br>
+    
+    <div id="ingredients">
+    </div>
 
-  <div id="pot" ondrop="onDrop(event);" ondragover="onDragOver(event);">
-    鍋
-  </div>
+    <input type="submit" value="つくる！">
 </body>
 </html>
