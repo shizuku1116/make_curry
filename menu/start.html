@@ -13,11 +13,17 @@
             for(var d=0;d<4;d++) id+=(Math.floor(Math.random()*4)).toString();
             document.getElementById("hard").href='https://shizuku1116.github.io/make_curry/?id='+id;
         }
+
+        function sendEasy(){
+            var id=(Math.floor(Math.random()*9)).toString();
+            id+=(Math.floor(Math.random()*4)).toString();
+            document.getElementById("hard").href='https://shizuku1116.github.io/make_curry/easy/easy/html?id='+id;
+        }
     </script>
 </head>
 <body>
     <div id="background">
-    <a href="" class="btn btn--orange btn--radius" id="easy">かんたん</a>
+    <a href="" class="btn btn--orange btn--radius" id="easy" onclick="sendEasy()">かんたん</a>
     <a href="" class="btn btn--brue btn--radius" onclick="send()" id="hard">むずかしい</a>
     </div>
 
