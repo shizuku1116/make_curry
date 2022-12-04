@@ -41,14 +41,14 @@
     function make(){
         var num=[]
         var element=document.getElementById("ingredients").children;
-        for(var i=0;i<element.length;i++) num.push(element[i].src.match(/\d+(?=.jpg)/)[0]);
+        for(var i=0;i<element.length-1;i++) num.push(element[i].src.match(/\d+(?=\.jpg)/)[0]);
 		var url = new URL(window.location.href);
 		var id = url.searchParams.get("id").match(/\d/g);
         var result=0
         for(var i=0;i<num.length;i++){
             if(num[i]!=id[i+1]) result=1
         }
-        document.getElementById("make").href="https://shizuku1116.github.io/make_curry/result/result.html?id="+id.join("")+result
+        document.getElementById("make").href="https://shizuku1116.github.io/make_curry/result/result.html?id="+id.join("")+result;
     }
   </script>
 
