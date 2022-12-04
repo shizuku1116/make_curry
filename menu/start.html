@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{background-image: url("menu_img.jpg");background-size: 50%;background-repeat: no-repeat;}
+        #background{background-image: url("menu_img.jpg");background-size:contain;background-repeat: no-repeat;}
         a.btn--orange {
             color: #fff;
             background-color: #eb6100;
@@ -37,6 +37,11 @@
             border-radius: 100vh;
         }
 
+        #background{
+            width:700px;
+            height:630px;
+        }
+
     </style>
     <script>
         function send(){
@@ -47,8 +52,10 @@
     </script>
 </head>
 <body>
+    <div id="background">
     <a href="" class="btn btn--orange btn--radius" id="easy">かんたん</a>
     <a href="" class="btn btn--brue btn--radius" onclick="send()" id="hard">むずかしい</a>
+    </div>
 
 </body>
 </html>
