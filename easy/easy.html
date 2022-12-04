@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/easy.css" type="text/css">
+    <link rel="stylesheet" href="./img/easy.css" type="text/css">
 </head>
 <script>
     const material=["apple","potato","onion","meat","cake","pizza","juice","bread","milk"];
@@ -28,8 +28,11 @@
     }
 
     function make(tag){
-      var i=Number(tag.src.match(/\d+(?=\.jpg)/));
-        
+        var i=Number(document.getElementById("img").src.match(/\d+(?=\.jpg)/));
+        const url = new URL(window.location.href);
+		const id = url.searchParams.get("id").match(/\d/g);
+        if(id[1]==i) tag.href="https://shizuku1116.github.io/make_curry/easy/result.html?id="+id.join("")+"0";
+        else tag.href="https://shizuku1116.github.io/make_curry/easy/result.html?id="+id.join("")+"1";
     }
 </script>
 <body class="body" onload="load()">
