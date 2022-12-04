@@ -3,31 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title></title>
-  <style>
-    #ingredients{
-        width:600px;
-        height:250px;
-        border:solid 1px #ff6a00;
-    }
-    #recipe{
-        width:600px;
-        height:250px;
-        border:solid 1px #ff0000;
-    }
-    a.btn--brue {
-        color: #fff;
-        background-color: #4d5bec;
-        font-size: 1.6rem;
-        position: absolute; 
-        left: 20%; 
-        width: 9rem;
-        text-align: center;
-        text-decoration:none;
-    }
-    a.btn--radius {
-        border-radius: 100vh;
-    }
-  </style>
+  <link rel="stylesheet" href="./img/css.css" type="text/css">
 
   <script type="text/javascript">
     const curry=["apple","potato","onion","meat"]
@@ -48,8 +24,9 @@
         }
 
         var recipe=document.getElementById("recipe");
+        var intro=document.getElementById("intro")
         var ingredients=document.getElementById("ingredients");
-        recipe.insertAdjacentHTML("beforebegin",jmenu[id[0]]);
+        intro.insertAdjacentHTML("afterbegin",jmenu[id[0]]);
         recipe.insertAdjacentHTML("beforeend",text);
         ingredients.insertAdjacentHTML("afterbegin",text2);
     }
@@ -76,14 +53,18 @@
   </script>
 
 </head>
-<body onload="uketori()">
+<body class="body" onload="uketori()">
 
-    <div id="recipe">
+    <h id="intro"></h>
+    <div class="box1" id="recipe">
+        <span class="box-title">レシピ</span>
+
+      </div><br>
+      <h>レシピをみて、かずをあわせよう！</h>
+    <div class="box2" id="ingredients">
+        <span class="box2-title">ざいりょう</span>
     </div><br>
-    
-    <div id="ingredients">
-    </div>
-	<br>
+    <a href="https://shizuku1116.github.io/make_curry/menu/start.html" id="menu" class="btn btn--green btn--radius" onclick="menu()">やめる</a>
     <a href="" id="make" class="btn btn--brue btn--radius" onclick="make()">つくる</a>
 </body>
 </html>
