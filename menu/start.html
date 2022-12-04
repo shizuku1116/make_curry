@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-image: url("menu_img.jpg");background-size: 50%;background-repeat: no-repeat;}
+        a.btn--orange {
+            color: #fff;
+            background-color: #eb6100;
+            font-size: 1.6rem;
+            position: absolute; 
+            left: 20%; 
+            top: 60%;
+            width: 9rem;
+            text-align: center;
+            text-decoration:none;
+        }
+        a.btn--radius {
+            border-radius: 100vh;
+        }
+
+        a.btn--brue {
+            color: #fff;
+            background-color: #4d5bec;
+            font-size: 1.6rem;
+            position: absolute; 
+            left: 20%; 
+            top: 75%;
+            width: 9rem;
+            text-align: center;
+            text-decoration:none;
+        }
+        a.btn--radius {
+            border-radius: 100vh;
+        }
+
+    </style>
+    <script>
+        function send(){
+            var id=(Math.floor(Math.random()*3)).toString();
+            for(var d=0;d<4;d++) id+=(Math.floor(Math.random()*4)).toString();
+            document.getElementById("hard").href='https://shizuku1116.github.io/make_curry/?id='+id;
+        }
+    </script>
+</head>
+<body>
+    <a href="" class="btn btn--orange btn--radius" id="easy">かんたん</a>
+    <a href="" class="btn btn--brue btn--radius" onclick="send()" id="hard">むずかしい</a>
+
+</body>
+</html>
