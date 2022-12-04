@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/result.css" type="text/css">
+    <script>
+        function uketori(){
+            var url = new URL(window.location.href);
+		    var id = url.searchParams.get("id").match(/\d/g);
+            result=id.pop();
+            menuId=id.shift();
+            const menu=["curry","party","breakfast"];
+
+            var image=document.getElementById("result");
+            image.src="./img/"+menu[menuId]+result+".jpg";
+            if(result==1) document.getElementById("next").hidden=true;
+            if(result==0) document.getElementById("back").hidden=true;
+        }
+
+        function back(){
+            var url = new URL(window.location.href);
+		    var id = url.searchParams.get("id").match(/\d/g);
+            id.pop();
+            document.getElementById("back").href="https://shizuku1116.github.io/make_curry/?id="+id.join("");
+        }
+
+        function go(){
+            var id=(Math.floor(Math.random()*3)).toString();
+            for(var d=0;d<4;d++) id+=(Math.floor(Math.random()*4)).toString();
+            document.getElementById("next").href='https://shizuku1116.github.io/make_curry/?id='+id;
+        }
+    </script>
+</head>
+<body onload="uketori()">
+    <div id="space">
+        <img id="result" height="100%">
+    </div>
+    <a href="" id="back" class="btn btn--brue btn--radius" onclick="back()">もどる</a>
+    <a href="" id="next" class="btn btn--orange btn--radius" onclick="go()">つぎへ</a>
+    <a href="https://shizuku1116.github.io/make_curry/menu/start.html" id="menu" class="btn btn--green btn--radius" onclick="menu()">やめる</a>
+</body>
+</html>
