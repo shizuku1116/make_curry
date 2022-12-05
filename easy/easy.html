@@ -21,15 +21,14 @@
     }
 
     function imgChange(tag){
-      var material=tag.src.match(/(?<=img\/).*?\./g)[0];
-      var i=Number(material.match(/\d+/));
-      material=material.replace(/\d+\./g,"");
+      var material=tag.src.match(/img\/.*(?=\d+\.jpg)/g)[0].replace(/img\//,"");
+      var i=Number(tag.src.match(/\d+(?=\.jpg)/));
       i++;
       tag.src="../img/"+material+i%4+".jpg";
     }
 
     function make(tag){
-        var i=Number(document.getElementById("img").src.match(/\d+\.jpg/g)[0].replace(/\.jpg/,""));
+        var i=Number(document.getElementById("img").src.match(/\d+(?=\.jpg)/g)[0]);
         const url = new URL(window.location.href);
 		const id = url.searchParams.get("id").match(/\d/g);
         if(id[1]==i) tag.href="https://shizuku1116.github.io/make_curry/easy/result.html?id="+id.join("")+"0";
