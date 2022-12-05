@@ -30,7 +30,7 @@ a.btn--radius {
 #body{
     background-image: url("../menu_img2.jpg");
     background-size: cover;
-    width:50%;
+    max-width: 100%;
     text-align: center;
 }
 
