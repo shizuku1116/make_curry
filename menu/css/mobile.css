@@ -36,7 +36,7 @@ a.btn--radius {
 
 #title{
     position:absolute;
-    height: 40%;
-    background-size: cover;
+    max-width: 100%;
+    height: auto;
     left:auto;
 }
