@@ -15,7 +15,6 @@
     padding: 48px 16px 16px; /*内側の余白*/
     border: 5px solid gold; /*枠線*/
     border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0）*/
-    max-width: 100%;
     width:600px;
     height:250px;
 }
@@ -36,7 +35,6 @@
     padding: 48px 16px 16px; /*内側の余白*/
     border: 5px solid rgb(255, 126, 249); /*枠線*/
     border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0）*/
-    max-width: 100%;
     width:600px;
     height:250px;
 }
@@ -67,4 +65,8 @@ a.btn--radius {
 .body h{
     font-size: larger;
     font-weight: bolder;
+}
+
+.img{
+    height: 80%;
 }
