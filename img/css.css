@@ -1,20 +1,21 @@
 .box1 .box-title { /*【span】タイトル部分*/
-position: absolute; /*必須*/
-top: 0; /*囲み枠の上にぴったりくっつく*/
-left: 0; /*囲み枠の左にぴったりくっつく*/
-background: gold; /*背景色*/
-line-height: 32px; /*行の高さ*/  
-padding: 0 15px; /*左右の余白*/
-border-radius: 12px 0 12px 0; /*角丸（左上12px 右上0 右下12px 左下0）*/
-font-weight: bold; /*フォント太字*/
-font-size:larger;
+    position: absolute; /*必須*/
+    top: 0; /*囲み枠の上にぴったりくっつく*/
+    left: 0; /*囲み枠の左にぴったりくっつく*/
+    background: gold; /*背景色*/
+    line-height: 32px; /*行の高さ*/  
+    padding: 0 15px; /*左右の余白*/
+    border-radius: 12px 0 12px 0; /*角丸（左上12px 右上0 右下12px 左下0）*/
+    font-weight: bold; /*フォント太字*/
+    font-size:larger;
 }
 .box1 { /*【div】囲み枠部分*/
-position: relative; /*必須*/
-margin: 0px 16px; /*外側の余白*/
-padding: 48px 16px 16px; /*内側の余白*/
-border: 5px solid gold; /*枠線*/
-border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0）*/
+    position: relative; /*必須*/
+    margin: 0px 16px; /*外側の余白*/
+    padding: 48px 16px 16px; /*内側の余白*/
+    border: 5px solid gold; /*枠線*/
+    border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0）*/
+    max-width: 100%;
     width:600px;
     height:250px;
 }
@@ -30,13 +31,14 @@ border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0�
     font-size:larger;
 }
 .box2 { /*【div】囲み枠部分*/
-position: relative; /*必須*/
-margin: 0px 16px; /*外側の余白*/
-padding: 48px 16px 16px; /*内側の余白*/
-border: 5px solid rgb(255, 126, 249); /*枠線*/
-border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0）*/
-width:600px;
-height:250px;
+    position: relative; /*必須*/
+    margin: 0px 16px; /*外側の余白*/
+    padding: 48px 16px 16px; /*内側の余白*/
+    border: 5px solid rgb(255, 126, 249); /*枠線*/
+    border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0）*/
+    max-width: 100%;
+    width:600px;
+    height:250px;
 }
 a.btn--brue {
     color: #fff;
