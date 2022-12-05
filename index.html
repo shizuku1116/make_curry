@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <title></title>
-  <link rel="stylesheet" href="./img/css.css" type="text/css">
+  <link rel="stylesheet" href="./css/mobile.css" type="text/css" media="screen and (max-width: 899px)">
+  <link rel="stylesheet" href="./css/pc.css" type="text/css" media="screen and (min-width: 900px)">
 
   <script type="text/javascript">
     const curry=["apple","potato","onion","meat"]
@@ -19,8 +20,8 @@
         var text2=""
 
         for(var n=0;n<menu[id[0]].length;n++){
-            text+="<img id=\""+menu[id[0]][n]+"\" src=\"./img/"+menu[id[0]][n]+id[n+1]+".jpg\" height=\"80%\">\n";
-            text2+="<img id=\""+menu[id[0]][n]+"\" src=\"./img/"+menu[id[0]][n]+"0.jpg\" onclick=\"imgChange(this)\" height=\"80%\">\n";
+            text+="<img class=\"img\" id=\""+menu[id[0]][n]+"\" src=\"./img/"+menu[id[0]][n]+id[n+1]+".jpg\">\n";
+            text2+="<img class=\"img\" id=\""+menu[id[0]][n]+"\" src=\"./img/"+menu[id[0]][n]+"0.jpg\" onclick=\"imgChange(this)\">\n";
         }
 
         var recipe=document.getElementById("recipe");
@@ -58,8 +59,8 @@
     <h id="intro"></h>
     <div class="box1" id="recipe">
         <span class="box-title">レシピ</span>
-
       </div><br>
+      
       <h>レシピをみて、かずをあわせよう！</h>
     <div class="box2" id="ingredients">
         <span class="box2-title">ざいりょう</span>
