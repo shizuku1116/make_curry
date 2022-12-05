@@ -1,13 +1,3 @@
-#background{
-    background-image: url("../menu_img.jpg");
-    background-size:contain;
-    background-repeat: no-repeat;
-    width:700px;
-    height:630px;
-    display:  table-cell;       /* テーブルセルにする */
-    vertical-align:  middle;
-    position: absolute;
-}
 a.btn--orange {
     color: #fff;
     background-color: #eb6100;
@@ -47,5 +37,6 @@ a.btn--radius {
 #title{
     position:absolute;
     height: 40%;
+    background-size: cover;
     left:auto;
 }
