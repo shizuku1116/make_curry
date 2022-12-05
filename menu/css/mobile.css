@@ -2,8 +2,8 @@
     background-image: url("../menu_img.jpg");
     background-size:contain;
     background-repeat: no-repeat;
-    width:500px;
-    height:450px;
+    width:700px;
+    height:630px;
     display:  table-cell;       /* テーブルセルにする */
     vertical-align:  middle;
     position: absolute;
@@ -13,7 +13,7 @@ a.btn--orange {
     background-color: #eb6100;
     font-size: 1.6rem;
     position: absolute; 
-    left: 40%; 
+    left: 50%; 
     top: 60%;
     width: 9rem;
     text-align: center;
@@ -28,7 +28,7 @@ a.btn--brue {
     background-color: #4d5bec;
     font-size: 1.6rem;
     position: absolute; 
-    left: 40%; 
+    left: 50%; 
     top: 75%;
     width: 9rem;
     text-align: center;
@@ -36,4 +36,15 @@ a.btn--brue {
 }
 a.btn--radius {
     border-radius: 100vh;
+}
+#body{
+    background-image: url("../menu_img2.jpg");
+    background-size: cover;
+    width:50%;
+    text-align: center;
+}
+
+#title{
+    position:absolute;
+    height: 300px;
 }
