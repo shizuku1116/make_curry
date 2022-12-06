@@ -73,3 +73,6 @@ a.btn--radius {
 .img{
     height: 15rem;
 }
+html {
+  touch-action: manipulation;
+}
