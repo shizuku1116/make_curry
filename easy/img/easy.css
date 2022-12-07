@@ -58,3 +58,7 @@ a.btn--radius {
     font-size: larger;
     font-weight: bolder;
 }
+#img{
+    height:100%;
+    touch-action: manipulation;
+}
